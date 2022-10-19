@@ -18,7 +18,8 @@
             android:theme="@style/Theme.JamrockCuisine.NoActionBar" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
