@@ -9,9 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JamrockCuisine">
-        <activity android:name=".BreakfastCategory"></activity>
+        <activity android:name=".BreakfastCategory"/>
         <activity android:name=".Instructions_AckeeNSaltfish" />
         <activity android:name=".Ingredients_AckeeNSaltfish" />
+        <activity android:name=".LunchCategory"/>
+        <activity android:name=".DinnerCategory"/>
+        <activity android:name=".DesertCategory"/>
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"

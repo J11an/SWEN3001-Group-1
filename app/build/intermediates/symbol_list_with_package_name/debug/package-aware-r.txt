@@ -2481,6 +2481,7 @@ drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable ackee_and_salt_fish
+drawable arrow
 drawable avd_hide_password
 drawable avd_show_password
 drawable banana_bread
@@ -2513,6 +2514,7 @@ drawable escovitch_fish
 drawable fried_breadfruit
 drawable grater_cake
 drawable gratercake
+drawable home_20
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2584,6 +2586,7 @@ drawable test_custom_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+font inder
 id ALT
 id BOTTOM_END
 id BOTTOM_START
@@ -2673,6 +2676,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id backbutton
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -2685,6 +2689,9 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id breakfastCategory
+id breakfastImg
+id breakfastcategory
+id breakfastcategorytext
 id button2
 id buttonPanel
 id cache_measures
@@ -2743,6 +2750,9 @@ id decor_content_parent
 id default_activity_button
 id deltaRelative
 id dependency_ordering
+id desertcategory
+id desertcategorytext
+id desertrecipesview
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -2752,6 +2762,9 @@ id dessertImg
 id dialog_button
 id dimensions
 id dinnerImg
+id dinnerImg9
+id dinnercategory
+id dinnerrecipeview
 id direct
 id disableHome
 id disableIntraAutoTransition
@@ -2823,6 +2836,7 @@ id homeButton
 id homeButton2
 id homeButton3
 id homeButton4
+id homebutton
 id honorRequest
 id horizontal_only
 id icon
@@ -2832,7 +2846,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView
-id imageView10
+id imageView2
 id imageView3
 id imageView4
 id imageView5
@@ -2866,6 +2880,8 @@ id list_item
 id loginButton
 id loginButton2
 id lunchImg
+id lunchcategory
+id lunchcategorytext
 id masked
 id match_constraint
 id match_parent
@@ -3109,6 +3125,9 @@ id textView43
 id textView44
 id textView45
 id textView46
+id textView47
+id textView48
+id textView49
 id textView5
 id textView6
 id textView7
@@ -3128,6 +3147,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toolbar
 id top
 id topPanel
 id touch_outside
@@ -3257,10 +3277,13 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_breakfast_category
+layout activity_desert_category
+layout activity_dinner_category
 layout activity_home
 layout activity_ingredients__ackee_n_saltfish
 layout activity_instructions__ackee_n_saltfish
 layout activity_login
+layout activity_lunch_category
 layout activity_main
 layout activity_register
 layout custom_dialog

@@ -35,7 +35,7 @@
                     android:textSize="24sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/lunchImg" />
+                    app:layout_constraintTop_toBottomOf="@+id/breakfastImg" />
 
                 <ImageView
                     android:id="@+id/dinnerImg"
@@ -64,7 +64,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/dessertImg" />
 
                 <ImageView
-                    android:id="@+id/lunchImg"
+                    android:id="@+id/breakfastImg"
                     android:layout_width="125dp"
                     android:layout_height="125dp"
                     android:layout_marginStart="32dp"
@@ -98,6 +98,7 @@
                     android:textAlignment="center"
                     android:textColor="#0C0C0C"
                     android:textSize="30sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/searchView" />
@@ -165,10 +166,10 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+                            app:layout_constraintTop_toBottomOf="@+id/lunchImg" />
 
                         <ImageView
-                            android:id="@+id/imageView10"
+                            android:id="@+id/lunchImg"
                             android:layout_width="125dp"
                             android:layout_height="125dp"
                             app:layout_constraintEnd_toEndOf="parent"

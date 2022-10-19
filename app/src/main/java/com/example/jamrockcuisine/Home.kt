@@ -11,20 +11,26 @@ class Home : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
 
-
-        val lunch = findViewById<ImageView>(R.id.lunchImg);
-        lunch.setOnClickListener {
+        val breakfast = findViewById<ImageView>(R.id.breakfastImg);
+        breakfast.setOnClickListener {
             val intent = Intent(this,BreakfastCategory::class.java);
             startActivity(intent)
         }
+
+        val lunch = findViewById<ImageView>(R.id.lunchImg);
+        lunch.setOnClickListener {
+            val intent = Intent(this,LunchCategory::class.java);
+            startActivity(intent)
+        }
+
         val dinner = findViewById<ImageView>(R.id.dinnerImg);
         dinner.setOnClickListener {
-            val intent = Intent(this,Home::class.java);
+            val intent = Intent(this,DinnerCategory::class.java);
             startActivity(intent)
         }
         val dessert = findViewById<ImageView>(R.id.dessertImg);
         dessert.setOnClickListener {
-            val intent = Intent(this,Home::class.java);
+            val intent = Intent(this,DesertCategory::class.java);
             startActivity(intent)
         }
 

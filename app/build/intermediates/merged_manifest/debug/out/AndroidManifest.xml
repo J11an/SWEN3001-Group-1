@@ -21,6 +21,9 @@
         <activity android:name="com.example.jamrockcuisine.BreakfastCategory" />
         <activity android:name="com.example.jamrockcuisine.Instructions_AckeeNSaltfish" />
         <activity android:name="com.example.jamrockcuisine.Ingredients_AckeeNSaltfish" />
+        <activity android:name="com.example.jamrockcuisine.LunchCategory" />
+        <activity android:name="com.example.jamrockcuisine.DinnerCategory" />
+        <activity android:name="com.example.jamrockcuisine.DesertCategory" />
         <activity
             android:name="com.example.jamrockcuisine.Home"
             android:label="@string/title_activity_home"
