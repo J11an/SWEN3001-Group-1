@@ -2692,6 +2692,11 @@ id breakfastCategory
 id breakfastImg
 id breakfastcategory
 id breakfastcategorytext
+id breakfastview
+id brecipe1
+id brecipe2
+id brecipe3
+id brecipe4
 id button2
 id buttonPanel
 id cache_measures
@@ -2762,8 +2767,8 @@ id dessertImg
 id dialog_button
 id dimensions
 id dinnerImg
-id dinnerImg9
 id dinnercategory
+id dinnercategory1
 id dinnerrecipeview
 id direct
 id disableHome
@@ -3277,6 +3282,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_breakfast_category
+layout activity_breakfast_category1
 layout activity_desert_category
 layout activity_dinner_category
 layout activity_home

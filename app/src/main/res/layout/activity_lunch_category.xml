@@ -131,7 +131,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:id="@+id/dinnerImg9"
+                        android:id="@+id/dinnercategory1"
                         android:layout_width="125dp"
                         android:layout_height="125dp"
                         android:layout_marginStart="312dp"
@@ -238,7 +238,7 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:srcCompat="@drawable/gratercake" />
+                                app:srcCompat="@drawable/dinner" />
 
                             <TextView
                                 android:id="@+id/textView14"
@@ -247,7 +247,8 @@
                                 android:layout_marginTop="16dp"
                                 android:fontFamily="@font/inder"
                                 android:gravity="center_vertical"
-                                android:text="Grater Cake"
+                                android:text="Fried Chicken and Plantain"
+                                android:textAlignment="center"
                                 android:textColor="#000000"
                                 android:textSize="18sp"
                                 app:layout_constraintEnd_toEndOf="parent"

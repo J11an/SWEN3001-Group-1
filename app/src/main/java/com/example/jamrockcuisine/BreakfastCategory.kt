@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import androidx.cardview.widget.CardView
 
 class BreakfastCategory : AppCompatActivity() {
@@ -11,13 +12,19 @@ class BreakfastCategory : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_breakfast_category)
 
-        val homeButton = findViewById<Button>(R.id.homeButton4)
-        homeButton.setOnClickListener {
-            val intent = Intent(this,Home::class.java)
-            startActivity(intent);
+        val catBackButton = findViewById<ImageView>(R.id.backbutton);
+        catBackButton.setOnClickListener {
+            val intent = Intent(this,Home::class.java);
+            startActivity(intent)
         }
 
-        val ackeeNSaltfish = findViewById<CardView>(R.id.ackeeNSaltfish)
+        val catHomeButton = findViewById<ImageView>(R.id.homebutton);
+        catHomeButton.setOnClickListener {
+            val intent = Intent(this,Home::class.java);
+            startActivity(intent)
+        }
+
+        val ackeeNSaltfish = findViewById<CardView>(R.id.brecipe1)
         ackeeNSaltfish.setOnClickListener {
             val intent = Intent(this,Ingredients_AckeeNSaltfish::class.java)
             startActivity(intent);

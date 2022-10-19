@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\0\\AndroidStudioProjects\\SWEN3001-Group-1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "outputFile": "C:\\Users\\0\\Desktop\\Test\\SWEN3001-Group-1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\0\\Desktop\\Test\\SWEN3001-Group-1\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "14",
+                        "endColumns": "12",
+                        "endOffsets": "835"
+                    },
+                    "to": {
+                        "startLines": "9",
+                        "startColumns": "4",
+                        "startOffsets": "732",
+                        "endLines": "21",
+                        "endColumns": "12",
+                        "endOffsets": "1451"
+                    }
+                },
                 {
                     "source": "C:\\Users\\0\\.gradle\\caches\\transforms-2\\files-2.1\\bb94fdfa2df9f360cf91bc8dda0bb70f\\appcompat-1.4.2\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
@@ -35,25 +54,6 @@
                         "startOffsets": "1456,1531,1642,1731,1832,1939,2046,2145,2248,2336,2460,2562,2664,2780,2882,2996,3124,3240,3362,3498,3618,3752,3872,3984,4199,4316,4440,4570,4692,4830,4964,5080",
                         "endColumns": "74,110,88,100,106,106,98,102,87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,116,123,129,121,137,133,115,119",
                         "endOffsets": "1526,1637,1726,1827,1934,2041,2140,2243,2331,2455,2557,2659,2775,2877,2991,3119,3235,3357,3493,3613,3747,3867,3979,4105,4311,4435,4565,4687,4825,4959,5075,5195"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\0\\AndroidStudioProjects\\SWEN3001-Group-1\\app\\src\\main\\res\\values-night\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "102",
-                        "endLines": "14",
-                        "endColumns": "12",
-                        "endOffsets": "835"
-                    },
-                    "to": {
-                        "startLines": "9",
-                        "startColumns": "4",
-                        "startOffsets": "732",
-                        "endLines": "21",
-                        "endColumns": "12",
-                        "endOffsets": "1451"
                     }
                 }
             ]
