@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.2.2] C:\Users\0\.gradle\caches\transforms-2\files-2.1\97232d6d193d8c53f12eb7f70e881037\navigation-fragment-ktx-2.2.2\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment-ktx:1.2.4] C:\Users\0\.gradle\caches\transforms-2\files-2.1\d5194a2d55f3312a157471e616c23182\jetified-fragment-ktx-1.2.4\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.navigation:navigation-ui-ktx:2.2.2] C:\Users\0\.gradle\caches\transforms-2\files-2.1\4a1b14b13349a5b1749f03c8b3ff2e41\navigation-ui-ktx-2.2.2\AndroidManifest.xml:17:1-24:12
@@ -58,25 +58,25 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\0\.gradle\caches
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\0\.gradle\caches\transforms-2\files-2.1\2853cf8be6718e8802a424e16e62801d\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\0\.gradle\caches\transforms-2\files-2.1\beb36a322ae29d89bb540ad38a6ee5f4\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\0\.gradle\caches\transforms-2\files-2.1\464e9010fa5f87e59b9c354822609a1c\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
-INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
+INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
 	package
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:3:5-41
-		INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:3:5-41
+		INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
-		INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
+		INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
-		INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:1-34:12
+		INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:11-69
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:5:5-32:19
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:5:5-32:19
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\0\.gradle\caches\transforms-2\files-2.1\7f51d9e11567b0d574eacd07c4975afa\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [com.google.android.material:material:1.6.1] C:\Users\0\.gradle\caches\transforms-2\files-2.1\7f51d9e11567b0d574eacd07c4975afa\material-1.6.1\AndroidManifest.xml:24:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\0\.gradle\caches\transforms-2\files-2.1\1112d42b98ae9d9de65f19755c82a1fb\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -94,77 +94,77 @@ MERGED from [androidx.startup:startup-runtime:1.0.0] C:\Users\0\.gradle\caches\t
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.7.0] C:\Users\0\.gradle\caches\transforms-2\files-2.1\6ec0cbc5c39c224b83fd5c67aa6281c1\core-1.7.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:10:9-35
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:10:9-35
 	android:label
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:8:9-41
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:8:9-41
 	android:roundIcon
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:9:9-54
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:9:9-54
 	android:icon
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:7:9-43
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:7:9-43
 	android:allowBackup
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:6:9-35
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:11:9-52
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:11:9-52
 activity#com.example.jamrockcuisine.BreakfastCategory
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:12:9-54
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:12:9-54
 	android:name
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:12:19-52
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:12:19-52
 activity#com.example.jamrockcuisine.Instructions_AckeeNSaltfish
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:13:9-65
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:13:9-65
 	android:name
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:13:19-62
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:13:19-62
 activity#com.example.jamrockcuisine.Ingredients_AckeeNSaltfish
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:14:9-64
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:14:9-64
 	android:name
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:14:19-61
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:14:19-61
 activity#com.example.jamrockcuisine.LunchCategory
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:15:9-50
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:15:9-50
 	android:name
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:15:19-48
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:15:19-48
 activity#com.example.jamrockcuisine.DinnerCategory
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:16:9-51
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:16:9-51
 	android:name
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:16:19-49
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:16:19-49
 activity#com.example.jamrockcuisine.DesertCategory
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:17:9-51
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:17:9-51
 	android:name
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:17:19-49
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:17:19-49
 activity#com.example.jamrockcuisine.Home
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:18:9-21:71
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:18:9-21:71
 	android:label
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:20:13-56
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:20:13-56
 	android:theme
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:21:13-68
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:21:13-68
 	android:name
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:19:13-33
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:19:13-33
 activity#com.example.jamrockcuisine.Register
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:22:9-46
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:22:9-46
 	android:name
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:22:19-43
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:22:19-43
 activity#com.example.jamrockcuisine.Login
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:23:9-43
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:23:9-43
 	android:name
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:23:19-40
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:23:19-40
 activity#com.example.jamrockcuisine.MainActivity
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:24:9-31:20
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:24:9-31:20
 	android:exported
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:25:13-36
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:25:13-36
 	android:name
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:24:19-47
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:24:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:26:13-30:29
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:26:13-30:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:27:17-69
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:27:17-69
 	android:name
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:27:25-66
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:27:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:29:17-77
+ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:29:27-74
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml:29:27-74
 uses-sdk
-INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.2.2] C:\Users\0\.gradle\caches\transforms-2\files-2.1\97232d6d193d8c53f12eb7f70e881037\navigation-fragment-ktx-2.2.2\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.navigation:navigation-fragment-ktx:2.2.2] C:\Users\0\.gradle\caches\transforms-2\files-2.1\97232d6d193d8c53f12eb7f70e881037\navigation-fragment-ktx-2.2.2\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment-ktx:1.2.4] C:\Users\0\.gradle\caches\transforms-2\files-2.1\d5194a2d55f3312a157471e616c23182\jetified-fragment-ktx-1.2.4\AndroidManifest.xml:20:5-22:41
@@ -273,16 +273,16 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\0\.gradle\caches\transforms-2\
 MERGED from [androidx.print:print:1.0.0] C:\Users\0\.gradle\caches\transforms-2\files-2.1\beb36a322ae29d89bb540ad38a6ee5f4\print-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\0\.gradle\caches\transforms-2\files-2.1\464e9010fa5f87e59b9c354822609a1c\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\0\.gradle\caches\transforms-2\files-2.1\464e9010fa5f87e59b9c354822609a1c\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:20:5-22:41
-INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\0\Desktop\Test\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\0\Desktop\SWEN3001-Group-1\app\src\main\AndroidManifest.xml
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.0.0] C:\Users\0\.gradle\caches\transforms-2\files-2.1\20c65084549b6db0803748de11111f3f\jetified-emoji2-1.0.0\AndroidManifest.xml:26:9-34:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] C:\Users\0\.gradle\caches\transforms-2\files-2.1\afe63bfd9425efd674d3d6d4a77cbbf4\jetified-lifecycle-process-2.4.0\AndroidManifest.xml:26:9-34:20

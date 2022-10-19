@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\0\\Desktop\\Test\\SWEN3001-Group-1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "C:\\Users\\0\\Desktop\\SWEN3001-Group-1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\0\\.gradle\\caches\\transforms-2\\files-2.1\\1c1a24d07529602a83969631f82df401\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
