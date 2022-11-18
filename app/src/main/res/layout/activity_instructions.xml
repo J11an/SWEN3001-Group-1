@@ -23,7 +23,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:paddingBottom="20dp">
 
                 <Button
                     android:id="@+id/instr_homeButton"
@@ -240,13 +241,61 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
                     android:text="INGREDIENTS"
                     app:backgroundTint="#FF5722"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView5" />
+
+                <TextView
+                    android:id="@+id/timerMinutes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="monospace"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="#000000"
+                    android:textSize="36sp"
+                    app:layout_constraintEnd_toStartOf="@+id/timerSemiColon"
+                    app:layout_constraintTop_toBottomOf="@+id/ingredientsButton" />
+
+                <TextView
+                    android:id="@+id/timerSemiColon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="monospace"
+                    android:text=":"
+                    android:textColor="#FF5722"
+                    android:textSize="36sp"
+                    app:layout_constraintEnd_toEndOf="@+id/ingredientsButton"
+                    app:layout_constraintStart_toStartOf="@+id/ingredientsButton"
+                    app:layout_constraintTop_toBottomOf="@+id/ingredientsButton" />
+
+                <Button
+                    android:id="@+id/timerButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="Start Timer"
+                    android:textSize="24sp"
+                    app:backgroundTint="#FF5722"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/timerSemiColon" />
+
+                <TextView
+                    android:id="@+id/timerSeconds"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:fontFamily="monospace"
+                    android:text="00"
+                    android:textColor="#000000"
+                    android:textSize="36sp"
+                    app:layout_constraintStart_toEndOf="@+id/timerSemiColon"
+                    app:layout_constraintTop_toBottomOf="@+id/ingredientsButton" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

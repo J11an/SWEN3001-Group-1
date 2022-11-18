@@ -4,5 +4,5 @@ data class InstructionsModel(
         val id: Int,
         val stepNumber: Int,
         val instruction: String,
-        val time: String
+        val time: Int
 )

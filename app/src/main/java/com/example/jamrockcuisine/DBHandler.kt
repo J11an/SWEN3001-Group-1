@@ -15,8 +15,9 @@ import com.example.jamrockcuisine.models.RecipeModel
 class DBHandler(context: Context) :
     SQLiteOpenHelper(context,DB_NAME,null,DB_VERSION){
 
+    // Companion Object containing variables for creating database tables
     companion object{
-        private const val DB_VERSION = 1
+        private const val DB_VERSION = 2
         private const val DB_NAME = "AppDB"
 
         private const val CREDENTIALS_TABLE = "Credentials"
@@ -50,7 +51,9 @@ class DBHandler(context: Context) :
         populateTables(db)
     }
 
+    // This function populates the database table with all the recipe information
     private fun populateTables(db: SQLiteDatabase?) {
+        // Adding ackee and saltfish recipe to database
         var statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID)"
                 +" VALUES('Ackee and Saltfish','Breakfast',5,75,4,2131165280)")
         db?.execSQL(statement)
@@ -118,12 +121,15 @@ class DBHandler(context: Context) :
         db?.execSQL(statement)
     }
 
+    //This function creates the tables for the database
     private fun createTables(db: SQLiteDatabase?) {
+        //Creating Credentials table
         var statement = ("CREATE TABLE $CREDENTIALS_TABLE("
                 + "$ID INTEGER PRIMARY KEY,$CRED_EMAIL TEXT,"
                 + "$CRED_PASSWORD TEXT)")
         db?.execSQL(statement)
 
+        //Creating Recipes Table
         statement = ("CREATE TABLE $RECIPES_TABLE("
                 + "$ID INTEGER PRIMARY KEY, $REC_IMG_RES_ID INTEGER,$REC_NAME TEXT,"
                 + "$REC_CATEGORY TEXT,$REC_PREP_TIME INTEGER,"
@@ -131,12 +137,14 @@ class DBHandler(context: Context) :
 
         db?.execSQL(statement)
 
+        //Creating Ingredients Table
         statement = ("CREATE TABLE $INGREDIENTS_TABLE("
                 + "$ID INTEGER PRIMARY KEY,$RECIPE_ID INTEGER,"
                 + "$INGREDIENT_NAME TEXT,$INGREDIENT_QTY INTEGER,"
                 + "$INGREDIENT_UNITS TEXT)")
         db?.execSQL(statement)
 
+        //Creating Instructions Table
         statement = ("CREATE TABLE $INSTRUCTIONS_TABLE("
                 + "$ID INTEGER PRIMARY KEY,$RECIPE_ID INTEGER,"
                 + "$INSTRUCTION TEXT,$INSTRUCTION_TIME INTEGER,"
@@ -152,7 +160,8 @@ class DBHandler(context: Context) :
         onCreate(db)
     }
 
-     fun addUser(credential: CredModel): Long{
+    //This function adds a user's information to the Credentials table
+    fun addUser(credential: CredModel): Long{
         val db = this.writableDatabase
 
         val contentValues = ContentValues()
@@ -220,6 +229,7 @@ class DBHandler(context: Context) :
 
      */
 
+    //This function returns an arraylist of CredModels containing user's credential information
     @SuppressLint("Range")
      fun getUsers(): ArrayList<CredModel>{
         //onUpgrade(this.writableDatabase,this.writableDatabase.version,this.writableDatabase.version+1)
@@ -246,7 +256,7 @@ class DBHandler(context: Context) :
                 email = cursor.getString(cursor.getColumnIndex(CRED_EMAIL))
                 password = cursor.getString(cursor.getColumnIndex(CRED_PASSWORD))
 
-                val cred = CredModel(id=id, email=email, password=password)
+                val cred = CredModel(id, email, password)
                 credList.add(cred)
 
             } while (cursor.moveToNext())
@@ -257,6 +267,7 @@ class DBHandler(context: Context) :
         return credList
     }
 
+    //This function returns an arraylist of RecipeModels containing recipe information depending on the category entered in the parameters
     @SuppressLint("Range")
      fun getRecipes(category: String): ArrayList<RecipeModel>{
         val recipeList = ArrayList<RecipeModel>()
@@ -326,7 +337,7 @@ class DBHandler(context: Context) :
                                 instructionsCursor.getInt(instructionsCursor.getColumnIndex(ID)),
                                 instructionsCursor.getInt(instructionsCursor.getColumnIndex(STEP_NUMBER)),
                                 instructionsCursor.getString(instructionsCursor.getColumnIndex(INSTRUCTION)),
-                                instructionsCursor.getString(instructionsCursor.getColumnIndex(INSTRUCTION_TIME)),
+                                instructionsCursor.getInt(instructionsCursor.getColumnIndex(INSTRUCTION_TIME)),
                             )
 
                             instructions.add(instruction)
@@ -357,6 +368,7 @@ class DBHandler(context: Context) :
         return recipeList
     }
 
+    //This function returns a specific RecipeModel containing information about a recipe dependent on the id in the parameters
     @SuppressLint("Range")
     fun getRecipe(recId: Int): RecipeModel{
         var recipe = RecipeModel(0,"","",0,0,0,0,ArrayList(),ArrayList())
@@ -424,7 +436,7 @@ class DBHandler(context: Context) :
                                     instructionsCursor.getInt(instructionsCursor.getColumnIndex(ID)),
                                     instructionsCursor.getInt(instructionsCursor.getColumnIndex(STEP_NUMBER)),
                                     instructionsCursor.getString(instructionsCursor.getColumnIndex(INSTRUCTION)),
-                                    instructionsCursor.getString(instructionsCursor.getColumnIndex(INSTRUCTION_TIME))
+                                    instructionsCursor.getInt(instructionsCursor.getColumnIndex(INSTRUCTION_TIME))
                             )
 
                             instructions.add(instruction)
