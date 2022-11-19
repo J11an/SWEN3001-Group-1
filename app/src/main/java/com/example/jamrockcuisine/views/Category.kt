@@ -143,21 +143,21 @@ class Category : AppCompatActivity() {
             switchActivity("Home")
         }
 
-        val breakfast = findViewById<ImageView>(R.id.cat_breakfast)
+        val breakfast = findViewById<ImageView>(R.id.breakfastImg)
         breakfast.setOnClickListener {
             switchActivity("Breakfast_Category")
         }
 
-        val lunch = findViewById<ImageView>(R.id.cat_lunch)
+        val lunch = findViewById<ImageView>(R.id.lunchImg)
         lunch.setOnClickListener {
             switchActivity("Lunch_Category")
         }
 
-        val dinner = findViewById<ImageView>(R.id.cat_dinner)
+        val dinner = findViewById<ImageView>(R.id.dinnerImg)
         dinner.setOnClickListener {
             switchActivity("Dinner_Category")
         }
-        val dessert = findViewById<ImageView>(R.id.cat_dessert)
+        val dessert = findViewById<ImageView>(R.id.dessertImg)
         dessert.setOnClickListener {
             switchActivity("Dessert_Category")
         }

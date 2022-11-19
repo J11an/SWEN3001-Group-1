@@ -35,10 +35,10 @@ class Home : AppCompatActivity() {
             switchActivity("Dessert_Category")
         }
 
-        val recipeAckee = findViewById<Button>(R.id.viewRecipe_Ackee)
-        recipeAckee.setOnClickListener {
-            switchActivity("Ackee_and_Saltfish")
-        }
+//        val recipeAckee = findViewById<Button>(R.id.viewRecipe_Ackee)
+//        recipeAckee.setOnClickListener {
+//            switchActivity("Ackee_and_Saltfish")
+//        }
     }
 
     private fun switchActivity(viewName: String){
@@ -69,13 +69,13 @@ class Home : AppCompatActivity() {
                 intent.putExtras(bundle)
                 startActivity(intent)
             }
-            "Ackee_and_Saltfish" ->{
-                val intent = Intent(this,Ingredients::class.java)
-                val bundle = Bundle()
-                bundle.putString("recipeId", "1")
-                intent.putExtras(bundle)
-                startActivity(intent)
-            }
+//            "Ackee_and_Saltfish" ->{
+//                val intent = Intent(this,Ingredients::class.java)
+//                val bundle = Bundle()
+//                bundle.putString("recipeId", "1")
+//                intent.putExtras(bundle)
+//                startActivity(intent)
+//            }
         }
     }
 }

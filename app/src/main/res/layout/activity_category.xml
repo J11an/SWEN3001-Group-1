@@ -61,7 +61,7 @@
                     android:background="#F5F5F5">
 
                     <ImageView
-                        android:id="@+id/cat_breakfast"
+                        android:id="@+id/breakfastImg"
                         android:layout_width="125dp"
                         android:layout_height="125dp"
                         android:layout_marginStart="32dp"
@@ -88,7 +88,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:id="@+id/cat_lunch"
+                        android:id="@+id/lunchImg"
                         android:layout_width="125dp"
                         android:layout_height="125dp"
                         android:layout_marginStart="184dp"
@@ -114,7 +114,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:id="@+id/cat_dinner"
+                        android:id="@+id/dinnerImg"
                         android:layout_width="125dp"
                         android:layout_height="125dp"
                         android:layout_marginStart="338dp"
@@ -140,7 +140,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
-                        android:id="@+id/cat_dessert"
+                        android:id="@+id/dessertImg"
                         android:layout_width="125dp"
                         android:layout_height="125dp"
                         android:layout_marginStart="488dp"
