@@ -140,7 +140,7 @@ class Instructions : AppCompatActivity() {
     private fun configureLinks() {
         val recipeId = this.intent.extras?.getString("recipeId")
 
-        val homeButton = findViewById<Button>(R.id.instr_homeButton)
+        val homeButton = findViewById<ImageView>(R.id.instr_homeButton)
         homeButton.setOnClickListener {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)

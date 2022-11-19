@@ -9,44 +9,60 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#F5F5F5"
-        android:orientation="vertical">
+        android:background="#EDEDED"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="64dp">
 
+            <ImageView
+                android:id="@+id/cat_homeButton"
+                android:layout_width="44dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/home" />
+
+            <ImageView
+                android:id="@+id/bkbtn"
+                android:layout_width="44dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="78dp"
+                app:layout_constraintEnd_toStartOf="@+id/textView47"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/arrow" />
+
             <TextView
                 android:id="@+id/textView47"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/inder"
                 android:text="Categories"
                 android:textAlignment="center"
                 android:textColor="#0C0C0C"
-                android:textSize="30sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/cat_homeButton"
-                android:layout_width="49dp"
-                android:layout_height="39dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="4dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.12"
-                app:srcCompat="@drawable/home_20" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="170dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -56,9 +72,9 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:background="#F5F5F5">
+                    android:background="#EDEDED">
 
                     <ImageView
                         android:id="@+id/breakfastImg"
@@ -79,19 +95,20 @@
                         android:layout_width="125dp"
                         android:layout_height="32dp"
                         android:layout_marginStart="32dp"
-                        android:layout_marginTop="124dp"
+                        android:layout_marginTop="92dp"
                         android:fontFamily="@font/inder"
                         android:text="Breakfast"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:textAllCaps="false"
+                        android:textSize="20sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
                         android:id="@+id/lunchImg"
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
-                        android:layout_marginStart="184dp"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginStart="192dp"
                         android:layout_marginTop="24dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -104,12 +121,11 @@
                         android:layout_width="125dp"
                         android:layout_height="32dp"
                         android:layout_marginStart="184dp"
-                        android:layout_marginTop="124dp"
+                        android:layout_marginTop="92dp"
                         android:fontFamily="@font/inder"
                         android:text="Lunch"
                         android:textAlignment="center"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
+                        android:textSize="20sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -130,20 +146,19 @@
                         android:layout_width="125dp"
                         android:layout_height="32dp"
                         android:layout_marginStart="338dp"
-                        android:layout_marginTop="124dp"
+                        android:layout_marginTop="92dp"
                         android:fontFamily="@font/inder"
                         android:text="Dinner"
                         android:textAlignment="center"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
+                        android:textSize="20sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
                         android:id="@+id/dessertImg"
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
-                        android:layout_marginStart="488dp"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginStart="495dp"
                         android:layout_marginTop="24dp"
                         android:layout_weight="1"
                         android:clickable="true"
@@ -156,12 +171,11 @@
                         android:layout_width="125dp"
                         android:layout_height="32dp"
                         android:layout_marginStart="488dp"
-                        android:layout_marginTop="124dp"
+                        android:layout_marginTop="92dp"
                         android:fontFamily="@font/inder"
                         android:text="Desert"
                         android:textAlignment="center"
-                        android:textSize="24sp"
-                        android:textStyle="bold"
+                        android:textSize="20sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
