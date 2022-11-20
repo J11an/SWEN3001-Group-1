@@ -4,7 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
+import com.example.jamrockcuisine.DBHandler
 import com.example.jamrockcuisine.R
 
 class Home : AppCompatActivity() {
@@ -35,10 +38,32 @@ class Home : AppCompatActivity() {
             switchActivity("Dessert_Category")
         }
 
-//        val recipeAckee = findViewById<Button>(R.id.viewRecipe_Ackee)
-//        recipeAckee.setOnClickListener {
-//            switchActivity("Ackee_and_Saltfish")
-//        }
+        val favorite = findViewById<CardView>(R.id.home_favButton)
+        favorite.setOnClickListener {
+            switchActivity("Favorite")
+        }
+
+        val context = this
+        val search = findViewById<androidx.appcompat.widget.SearchView>(R.id.searchBar)
+        search.setOnQueryTextListener(object: SearchView.OnQueryTextListener,
+            androidx.appcompat.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                val bundle = Bundle()
+                bundle.putString("searchTerm", query)
+
+                val intent = Intent(context,SearchResults::class.java)
+                intent.putExtras(bundle)
+
+                startActivity(intent)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return true
+            }
+
+        })
+
     }
 
     private fun switchActivity(viewName: String){
@@ -69,13 +94,10 @@ class Home : AppCompatActivity() {
                 intent.putExtras(bundle)
                 startActivity(intent)
             }
-//            "Ackee_and_Saltfish" ->{
-//                val intent = Intent(this,Ingredients::class.java)
-//                val bundle = Bundle()
-//                bundle.putString("recipeId", "1")
-//                intent.putExtras(bundle)
-//                startActivity(intent)
-//            }
+            "Favorite" ->{
+                val intent = Intent(this,Favorites::class.java)
+                startActivity(intent)
+            }
         }
     }
 }

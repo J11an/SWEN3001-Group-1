@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JamrockCuisine">
-        <activity android:name=".views.Instructions"></activity>
+        <activity android:name=".views.SearchResults"></activity>
+        <activity android:name=".views.Favorites" />
+        <activity android:name=".views.Instructions" />
         <activity android:name=".views.Category" />
         <activity android:name=".views.Ingredients" />
         <activity android:name=".views.BreakfastCategory" />

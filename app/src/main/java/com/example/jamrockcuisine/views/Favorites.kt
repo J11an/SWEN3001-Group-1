@@ -1,33 +1,31 @@
 package com.example.jamrockcuisine.views
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Gravity
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.example.jamrockcuisine.DBHandler
 import com.example.jamrockcuisine.R
+import com.example.jamrockcuisine.models.RecipeModel
 
-class Category : AppCompatActivity() {
+class Favorites : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_category)
-
-        val typeCategory = this.intent.extras?.getString("category")
-        val categoryTitle = findViewById<TextView>(R.id.categoryTitle)
-        categoryTitle.text = typeCategory
+        setContentView(R.layout.activity_favorites)
 
         configureLinks()
-        addRecipes(typeCategory!!)
+        insertFavoritesInfo()
     }
 
-    private fun addRecipes(category: String){
+    private fun insertFavoritesInfo() {
         val dbHandler = DBHandler(this)
-        val catRecipeList = findViewById<LinearLayout>(R.id.cat_recipeList)
-        val recipeList = dbHandler.getRecipes(category)
+        val recipeList = dbHandler.getRecipes("Favorites")
+
+        val favoritesList = findViewById<LinearLayout>(R.id.favContents)
 
         for (recipe in recipeList){
             //Creating variables of recipe information for later use
@@ -51,7 +49,7 @@ class Category : AppCompatActivity() {
                 intent.putExtras(bundle)
                 startActivity(intent)
             }
-            catRecipeList.addView(recipeCard)
+            favoritesList.addView(recipeCard)
 
             //TODO Access ImageView and set the image resource based on resource id in RecipeModel
 
@@ -137,66 +135,11 @@ class Category : AppCompatActivity() {
         }
     }
 
-    private fun configureLinks(){
-        val catHomeButton = findViewById<ImageView>(R.id.cat_homeButton)
-        catHomeButton.setOnClickListener {
-            switchActivity("Home")
+    private fun configureLinks() {
+        val homeButton = findViewById<ImageView>(R.id.fav_homeButton)
+        homeButton.setOnClickListener {
+            val intent = Intent(this, Home::class.java)
+            startActivity(intent)
         }
-
-        val backButton = findViewById<ImageView>(R.id.cat_backButton)
-        backButton.setOnClickListener {
-            finish()
-        }
-
-        val breakfast = findViewById<ImageView>(R.id.breakfastImg)
-        breakfast.setOnClickListener {
-            switchActivity("Breakfast_Category")
-        }
-
-        val lunch = findViewById<ImageView>(R.id.lunchImg)
-        lunch.setOnClickListener {
-            switchActivity("Lunch_Category")
-        }
-
-        val dinner = findViewById<ImageView>(R.id.dinnerImg)
-        dinner.setOnClickListener {
-            switchActivity("Dinner_Category")
-        }
-        val dessert = findViewById<ImageView>(R.id.dessertImg)
-        dessert.setOnClickListener {
-            switchActivity("Dessert_Category")
-        }
-    }
-
-    private fun switchActivity(viewName: String){
-        val bundle = Bundle()
-        var intent = this.intent
-
-        when (viewName) {
-            "Home" -> {
-                intent = Intent(this, Home::class.java)
-            }
-            "Breakfast_Category" -> {
-                bundle.putString("category", "Breakfast")
-                intent = Intent(this, Category::class.java)
-                intent.putExtras(bundle)
-            }
-            "Lunch_Category" -> {
-                bundle.putString("category", "Lunch")
-                intent = Intent(this, Category::class.java)
-                intent.putExtras(bundle)
-            }
-            "Dinner_Category" -> {
-                bundle.putString("category", "Dinner")
-                intent = Intent(this, Category::class.java)
-                intent.putExtras(bundle)
-            }
-            "Dessert_Category" -> {
-                bundle.putString("category", "Dessert")
-                intent = Intent(this, Category::class.java)
-                intent.putExtras(bundle)
-            }
-        }
-        startActivity(intent)
     }
 }

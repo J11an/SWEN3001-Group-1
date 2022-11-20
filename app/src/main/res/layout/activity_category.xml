@@ -20,17 +20,7 @@
             android:layout_height="64dp">
 
             <ImageView
-                android:id="@+id/cat_homeButton"
-                android:layout_width="44dp"
-                android:layout_height="33dp"
-                android:layout_marginTop="28dp"
-                android:layout_marginEnd="24dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/home" />
-
-            <ImageView
-                android:id="@+id/bkbtn"
+                android:id="@+id/cat_backButton"
                 android:layout_width="44dp"
                 android:layout_height="33dp"
                 android:layout_marginStart="24dp"
@@ -40,6 +30,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/arrow" />
+
+            <ImageView
+                android:id="@+id/cat_homeButton"
+                android:layout_width="44dp"
+                android:layout_height="33dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="24dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/home" />
 
             <TextView
                 android:id="@+id/textView47"

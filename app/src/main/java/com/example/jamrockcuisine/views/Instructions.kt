@@ -26,7 +26,7 @@ class Instructions : AppCompatActivity() {
         var count = 0
         val dbHandler = DBHandler(this)
         val recipeId = this.intent.extras?.getString("recipeId")
-        val recipe = dbHandler.getRecipe(Integer.parseInt(recipeId!!))
+        var recipe = dbHandler.getRecipe(Integer.parseInt(recipeId!!))
         val instruction = findViewById<TextView>(R.id.tv_instruction)
 
         instruction.text = recipe.instructions[0].instruction
@@ -99,6 +99,20 @@ class Instructions : AppCompatActivity() {
             }
         }
 
+        //Setting Favorites icon
+        val favoriteButton = findViewById<ImageView>(R.id.instr_isFavoriteButton)
+        if (recipe.isFavorite == 1) {
+            favoriteButton.setImageResource(android.R.drawable.btn_star_big_on)
+        }
+        favoriteButton.setOnClickListener {
+            if (recipe.isFavorite == 0) {
+                favoriteButton.setImageResource(android.R.drawable.btn_star_big_on)
+            }else{
+                favoriteButton.setImageResource(android.R.drawable.btn_star_big_off)
+            }
+            recipe = dbHandler.getRecipe(recipe.id)
+            dbHandler.setFavorite(recipe.id,recipe.isFavorite)
+        }
 
         //Getting and configuring step buttons to change instruction text on click
         val prevStep = findViewById<Button>(R.id.prevStep)
@@ -146,8 +160,8 @@ class Instructions : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val bkButton = findViewById<ImageView>(R.id.bkbtn)
-        bkButton.setOnClickListener(){
+        val backButton = findViewById<ImageView>(R.id.instr_backButton)
+        backButton.setOnClickListener {
             finish()
         }
 

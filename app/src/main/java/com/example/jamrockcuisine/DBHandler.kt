@@ -32,6 +32,7 @@ class DBHandler(context: Context) :
         private const val REC_COOK_TIME = "cookingTime"
         private const val REC_SERVINGS = "servings"
         private const val REC_IMG_RES_ID = "imgResourceId"
+        private const val REC_FAVORITES = "isFavorite"
 
         private const val RECIPE_ID = "recipeID"
 
@@ -51,11 +52,42 @@ class DBHandler(context: Context) :
         populateTables(db)
     }
 
+    //This function creates the tables for the database
+    private fun createTables(db: SQLiteDatabase?) {
+        //Creating Credentials table
+        var statement = ("CREATE TABLE $CREDENTIALS_TABLE("
+                + "$ID INTEGER PRIMARY KEY,$CRED_EMAIL TEXT,"
+                + "$CRED_PASSWORD TEXT)")
+        db?.execSQL(statement)
+
+        //Creating Recipes Table
+        statement = ("CREATE TABLE $RECIPES_TABLE("
+                + "$ID INTEGER PRIMARY KEY, $REC_IMG_RES_ID INTEGER,$REC_NAME TEXT,"
+                + "$REC_CATEGORY TEXT,$REC_PREP_TIME INTEGER,"
+                + "$REC_COOK_TIME INTEGER,$REC_SERVINGS INTEGER, $REC_FAVORITES INTEGER)")
+
+        db?.execSQL(statement)
+
+        //Creating Ingredients Table
+        statement = ("CREATE TABLE $INGREDIENTS_TABLE("
+                + "$ID INTEGER PRIMARY KEY,$RECIPE_ID INTEGER,"
+                + "$INGREDIENT_NAME TEXT,$INGREDIENT_QTY INTEGER,"
+                + "$INGREDIENT_UNITS TEXT)")
+        db?.execSQL(statement)
+
+        //Creating Instructions Table
+        statement = ("CREATE TABLE $INSTRUCTIONS_TABLE("
+                + "$ID INTEGER PRIMARY KEY,$RECIPE_ID INTEGER,"
+                + "$INSTRUCTION TEXT,$INSTRUCTION_TIME INTEGER,"
+                + "$STEP_NUMBER INTEGER)")
+        db?.execSQL(statement)
+    }
+
     // This function populates the database table with all the recipe information
     private fun populateTables(db: SQLiteDatabase?) {
         // Adding ackee and saltfish recipe to database
-        var statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID)"
-                +" VALUES('Ackee and Saltfish','Breakfast',5,75,4,2131165280)")
+        var statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES)"
+                +" VALUES('Ackee and Saltfish','Breakfast',5,75,4,2131165280,0)")
         db?.execSQL(statement)
 
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
@@ -121,37 +153,6 @@ class DBHandler(context: Context) :
         db?.execSQL(statement)
     }
 
-    //This function creates the tables for the database
-    private fun createTables(db: SQLiteDatabase?) {
-        //Creating Credentials table
-        var statement = ("CREATE TABLE $CREDENTIALS_TABLE("
-                + "$ID INTEGER PRIMARY KEY,$CRED_EMAIL TEXT,"
-                + "$CRED_PASSWORD TEXT)")
-        db?.execSQL(statement)
-
-        //Creating Recipes Table
-        statement = ("CREATE TABLE $RECIPES_TABLE("
-                + "$ID INTEGER PRIMARY KEY, $REC_IMG_RES_ID INTEGER,$REC_NAME TEXT,"
-                + "$REC_CATEGORY TEXT,$REC_PREP_TIME INTEGER,"
-                + "$REC_COOK_TIME INTEGER,$REC_SERVINGS INTEGER)")
-
-        db?.execSQL(statement)
-
-        //Creating Ingredients Table
-        statement = ("CREATE TABLE $INGREDIENTS_TABLE("
-                + "$ID INTEGER PRIMARY KEY,$RECIPE_ID INTEGER,"
-                + "$INGREDIENT_NAME TEXT,$INGREDIENT_QTY INTEGER,"
-                + "$INGREDIENT_UNITS TEXT)")
-        db?.execSQL(statement)
-
-        //Creating Instructions Table
-        statement = ("CREATE TABLE $INSTRUCTIONS_TABLE("
-                + "$ID INTEGER PRIMARY KEY,$RECIPE_ID INTEGER,"
-                + "$INSTRUCTION TEXT,$INSTRUCTION_TIME INTEGER,"
-                + "$STEP_NUMBER INTEGER)")
-        db?.execSQL(statement)
-    }
-
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db!!.execSQL("DROP TABLE IF EXISTS $CREDENTIALS_TABLE")
         db.execSQL("DROP TABLE IF EXISTS $RECIPES_TABLE")
@@ -171,8 +172,10 @@ class DBHandler(context: Context) :
         val success = db.insert(CREDENTIALS_TABLE, null, contentValues)
 
         db.close()
-        return  success
+        return success
     }
+
+
 
     /*
     @SuppressLint("Range")
@@ -272,8 +275,8 @@ class DBHandler(context: Context) :
      fun getRecipes(category: String): ArrayList<RecipeModel>{
         val recipeList = ArrayList<RecipeModel>()
 
-        val statement = if (category == "All") {
-            "SELECT * FROM $RECIPES_TABLE"
+        val statement = if (category == "Favorites") {
+            "SELECT * FROM $RECIPES_TABLE WHERE $REC_FAVORITES = 1"
         }else{
             "SELECT * FROM $RECIPES_TABLE WHERE $REC_CATEGORY = '$category'"
         }
@@ -308,6 +311,7 @@ class DBHandler(context: Context) :
                 val cookTime = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_COOK_TIME))
                 val servings = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_SERVINGS))
                 val resId = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_IMG_RES_ID))
+                val isFavorite = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_FAVORITES))
                 val ingredients: ArrayList<IngredientsModel> = ArrayList()
                 val instructions: ArrayList<InstructionsModel> = ArrayList()
 
@@ -353,6 +357,7 @@ class DBHandler(context: Context) :
                     cookTime,
                     servings,
                     resId,
+                    isFavorite,
                     ingredients,
                     instructions
                 )
@@ -371,12 +376,9 @@ class DBHandler(context: Context) :
     //This function returns a specific RecipeModel containing information about a recipe dependent on the id in the parameters
     @SuppressLint("Range")
     fun getRecipe(recId: Int): RecipeModel{
-        var recipe = RecipeModel(0,"","",0,0,0,0,ArrayList(),ArrayList())
-
+        var recipe = RecipeModel(0,"","",0,0,0,0,0,ArrayList(),ArrayList())
 
         val statement = "SELECT * FROM $RECIPES_TABLE WHERE $ID = '$recId'"
-
-
         val statement2 = "SELECT * FROM $INGREDIENTS_TABLE"
         val statement3 = "SELECT * FROM $INSTRUCTIONS_TABLE"
 
@@ -407,6 +409,7 @@ class DBHandler(context: Context) :
                 val cookTime = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_COOK_TIME))
                 val servings = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_SERVINGS))
                 val resId = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_IMG_RES_ID))
+                val isFavorite = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_FAVORITES))
                 val ingredients: ArrayList<IngredientsModel> = ArrayList()
                 val instructions: ArrayList<InstructionsModel> = ArrayList()
 
@@ -452,6 +455,7 @@ class DBHandler(context: Context) :
                     cookTime,
                     servings,
                     resId,
+                    isFavorite,
                     ingredients,
                     instructions
                 )
@@ -463,5 +467,17 @@ class DBHandler(context: Context) :
         instructionsCursor.close()
         db.close()
         return recipe
+    }
+
+    fun setFavorite(recipeId: Int,isFavorite: Int){
+        val db = this.readableDatabase
+        val statement =
+        if (isFavorite == 0){
+            "UPDATE $RECIPES_TABLE SET $REC_FAVORITES = 1 WHERE $ID = $recipeId"
+        }else{
+            "UPDATE $RECIPES_TABLE SET $REC_FAVORITES = 0 WHERE $ID = $recipeId"
+        }
+
+        db.execSQL(statement)
     }
 }

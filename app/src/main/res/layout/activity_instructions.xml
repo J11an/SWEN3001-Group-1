@@ -23,7 +23,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="82dp"
                 android:background="#EDEDED"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -39,31 +39,14 @@
                     app:srcCompat="@drawable/home" />
 
                 <ImageView
-                    android:id="@+id/bkbtn"
+                    android:id="@+id/instr_backButton"
                     android:layout_width="44dp"
                     android:layout_height="33dp"
                     android:layout_marginStart="24dp"
                     android:layout_marginTop="28dp"
-                    android:layout_marginEnd="78dp"
-                    app:layout_constraintEnd_toStartOf="@+id/textView47"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/arrow" />
-
-                <TextView
-                    android:id="@+id/textView47"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="28dp"
-                    android:fontFamily="@font/inder"
-                    android:text="Categories"
-                    android:textAlignment="center"
-                    android:textColor="#0C0C0C"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -88,6 +71,15 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/ackee_and_salt_fish" />
+
+                    <ImageView
+                        android:id="@+id/instr_isFavoriteButton"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_gravity="bottom|end"
+                        android:clickable="true"
+                        app:srcCompat="@android:drawable/btn_star_big_off" />
+
                 </androidx.cardview.widget.CardView>
 
                 <TextView

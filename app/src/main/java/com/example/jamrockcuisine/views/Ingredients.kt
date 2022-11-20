@@ -26,7 +26,7 @@ class Ingredients : AppCompatActivity() {
 
     private fun addRecipeInfo(recipeId: Int) {
         val dbHandler = DBHandler(this)
-        val recipe = dbHandler.getRecipe(recipeId)
+        var recipe = dbHandler.getRecipe(recipeId)
 
         //Getting and configuring Recipe Name textview
         val recipeName = findViewById<TextView>(R.id.ingr_RecipeName)
@@ -44,6 +44,21 @@ class Ingredients : AppCompatActivity() {
         tvCookTime.text = "${recipe.cookTime} mins"
         val tvServings = findViewById<TextView>(R.id.servingsValue)
         tvServings.text = "${recipe.servings}"
+
+        //Setting Favorites icon
+        val favoriteButton = findViewById<ImageView>(R.id.ingr_isFavoriteButton)
+        if (recipe.isFavorite == 1) {
+            favoriteButton.setImageResource(android.R.drawable.btn_star_big_on)
+        }
+        favoriteButton.setOnClickListener {
+            if (recipe.isFavorite == 0) {
+                favoriteButton.setImageResource(android.R.drawable.btn_star_big_on)
+            }else{
+                favoriteButton.setImageResource(android.R.drawable.btn_star_big_off)
+            }
+            recipe = dbHandler.getRecipe(recipeId)
+            dbHandler.setFavorite(recipeId,recipe.isFavorite)
+        }
 
         val ingrNameLinLayout = findViewById<LinearLayout>(R.id.ingr_ingrNameLinLaayout)
         val ingrQtyLinLayout = findViewById<LinearLayout>(R.id.ingr_ingrQtyLinLayout)
@@ -78,8 +93,8 @@ class Ingredients : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val bkButton = findViewById<ImageView>(R.id.bkbtn)
-        bkButton.setOnClickListener(){
+        val backButton = findViewById<ImageView>(R.id.ingr_backButton)
+        backButton.setOnClickListener {
             finish()
         }
 

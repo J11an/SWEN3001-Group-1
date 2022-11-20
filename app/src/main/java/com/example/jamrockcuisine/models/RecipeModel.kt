@@ -8,6 +8,7 @@ data class RecipeModel(
         val cookTime: Int,
         val servings: Int,
         val resId: Int,
+        val isFavorite: Int,
         val ingredients: ArrayList<IngredientsModel>,
         val instructions: ArrayList<InstructionsModel>
 )
