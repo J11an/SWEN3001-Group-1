@@ -17,7 +17,8 @@ class DBHandler(context: Context) :
 
     // Companion Object containing variables for creating database tables
     companion object{
-        private const val DB_VERSION = 2
+
+        private const val DB_VERSION = 3
         private const val DB_NAME = "AppDB"
 
         private const val CREDENTIALS_TABLE = "Credentials"

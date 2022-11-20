@@ -2,12 +2,10 @@ package com.example.jamrockcuisine.views
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import com.example.jamrockcuisine.DBHandler
 import com.example.jamrockcuisine.R
 
 class Home : AppCompatActivity() {
@@ -94,8 +92,8 @@ class Home : AppCompatActivity() {
                 intent.putExtras(bundle)
                 startActivity(intent)
             }
-            "Favorite" ->{
-                val intent = Intent(this,Favorites::class.java)
+            "Favourite" ->{
+                val intent = Intent(this,Favourites::class.java)
                 startActivity(intent)
             }
         }

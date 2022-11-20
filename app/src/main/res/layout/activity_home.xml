@@ -83,6 +83,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="start|center_vertical"
             android:layout_marginStart="10dp"
+            android:fontFamily="@font/inder"
             android:text="FAVORITES"
             android:textSize="18sp" />
 
