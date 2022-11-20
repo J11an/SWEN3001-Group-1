@@ -143,6 +143,11 @@ class Category : AppCompatActivity() {
             switchActivity("Home")
         }
 
+        val bkButton = findViewById<ImageView>(R.id.bkbtn)
+        bkButton.setOnClickListener(){
+            finish()
+        }
+
         val breakfast = findViewById<ImageView>(R.id.breakfastImg)
         breakfast.setOnClickListener {
             switchActivity("Breakfast_Category")

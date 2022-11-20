@@ -78,6 +78,11 @@ class Ingredients : AppCompatActivity() {
             startActivity(intent)
         }
 
+        val bkButton = findViewById<ImageView>(R.id.bkbtn)
+        bkButton.setOnClickListener(){
+            finish()
+        }
+
         val instructionsButton = findViewById<Button>(R.id.ingr_instructionsButton)
         instructionsButton.setOnClickListener {
             val bundle = Bundle()
