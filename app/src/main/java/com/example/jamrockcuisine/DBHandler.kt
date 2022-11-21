@@ -18,7 +18,7 @@ class DBHandler(context: Context) :
     // Companion Object containing variables for creating database tables
     companion object{
 
-        private const val DB_VERSION = 3
+        private const val DB_VERSION = 4
         private const val DB_NAME = "AppDB"
 
         private const val CREDENTIALS_TABLE = "Credentials"
@@ -34,6 +34,7 @@ class DBHandler(context: Context) :
         private const val REC_SERVINGS = "servings"
         private const val REC_IMG_RES_ID = "imgResourceId"
         private const val REC_FAVORITES = "isFavorite"
+        private const val REC_TRENDY = "isTrendy"
 
         private const val RECIPE_ID = "recipeID"
 
@@ -65,7 +66,8 @@ class DBHandler(context: Context) :
         statement = ("CREATE TABLE $RECIPES_TABLE("
                 + "$ID INTEGER PRIMARY KEY, $REC_IMG_RES_ID INTEGER,$REC_NAME TEXT,"
                 + "$REC_CATEGORY TEXT,$REC_PREP_TIME INTEGER,"
-                + "$REC_COOK_TIME INTEGER,$REC_SERVINGS INTEGER, $REC_FAVORITES INTEGER)")
+                + "$REC_COOK_TIME INTEGER,$REC_SERVINGS INTEGER, $REC_FAVORITES INTEGER,"
+                + "$REC_TRENDY INTEGER)")
 
         db?.execSQL(statement)
 
@@ -87,8 +89,8 @@ class DBHandler(context: Context) :
     // This function populates the database table with all the recipe information
     private fun populateTables(db: SQLiteDatabase?) {
         // Adding ackee and saltfish recipe to database
-        var statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES)"
-                +" VALUES('Ackee and Saltfish','Breakfast',5,75,4,2131165280,0)")
+        var statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
+                +" VALUES('Ackee and Saltfish','Breakfast',5,75,4,2131165280,0,1)")
         db?.execSQL(statement)
 
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
@@ -278,7 +280,11 @@ class DBHandler(context: Context) :
 
         val statement = if (category == "Favorites") {
             "SELECT * FROM $RECIPES_TABLE WHERE $REC_FAVORITES = 1"
-        }else{
+        }
+        else if (category == "Trending"){
+            "SELECT * FROM $RECIPES_TABLE WHERE $REC_TRENDY = 1"
+        }
+        else{
             "SELECT * FROM $RECIPES_TABLE WHERE $REC_CATEGORY = '$category'"
         }
 
@@ -313,6 +319,7 @@ class DBHandler(context: Context) :
                 val servings = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_SERVINGS))
                 val resId = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_IMG_RES_ID))
                 val isFavorite = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_FAVORITES))
+                val isTrendy = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_TRENDY))
                 val ingredients: ArrayList<IngredientsModel> = ArrayList()
                 val instructions: ArrayList<InstructionsModel> = ArrayList()
 
@@ -359,6 +366,7 @@ class DBHandler(context: Context) :
                     servings,
                     resId,
                     isFavorite,
+                    isTrendy,
                     ingredients,
                     instructions
                 )
@@ -377,7 +385,7 @@ class DBHandler(context: Context) :
     //This function returns a specific RecipeModel containing information about a recipe dependent on the id in the parameters
     @SuppressLint("Range")
     fun getRecipe(recId: Int): RecipeModel{
-        var recipe = RecipeModel(0,"","",0,0,0,0,0,ArrayList(),ArrayList())
+        var recipe = RecipeModel(0,"","",0,0,0,0,0,0,ArrayList(),ArrayList())
 
         val statement = "SELECT * FROM $RECIPES_TABLE WHERE $ID = '$recId'"
         val statement2 = "SELECT * FROM $INGREDIENTS_TABLE"
@@ -411,6 +419,7 @@ class DBHandler(context: Context) :
                 val servings = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_SERVINGS))
                 val resId = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_IMG_RES_ID))
                 val isFavorite = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_FAVORITES))
+                val isTrendy = recipeCursor.getInt(recipeCursor.getColumnIndex(REC_TRENDY))
                 val ingredients: ArrayList<IngredientsModel> = ArrayList()
                 val instructions: ArrayList<InstructionsModel> = ArrayList()
 
@@ -457,6 +466,7 @@ class DBHandler(context: Context) :
                     servings,
                     resId,
                     isFavorite,
+                    isTrendy,
                     ingredients,
                     instructions
                 )
