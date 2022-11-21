@@ -38,7 +38,7 @@ class Home : AppCompatActivity() {
 
         val favorite = findViewById<CardView>(R.id.home_favButton)
         favorite.setOnClickListener {
-            switchActivity("Favorite")
+            switchActivity("Favourites")
         }
 
         val context = this
@@ -92,7 +92,7 @@ class Home : AppCompatActivity() {
                 intent.putExtras(bundle)
                 startActivity(intent)
             }
-            "Favourite" ->{
+            "Favourites" ->{
                 val intent = Intent(this,Favourites::class.java)
                 startActivity(intent)
             }
