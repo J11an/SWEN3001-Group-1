@@ -1,2 +1,0 @@
-com/example/jamrockcuisine/BuildConfig.java
- com.example.jamrockcuisine.BuildConfig
