@@ -219,6 +219,9 @@ class DBHandler(context: Context) :
             "Trending" -> {
                 "SELECT * FROM $RECIPES_TABLE WHERE $REC_TRENDY = 1"
             }
+            "All" -> {
+                "SELECT * FROM $RECIPES_TABLE"
+            }
             else -> {
                 "SELECT * FROM $RECIPES_TABLE WHERE $REC_CATEGORY = '$category'"
             }
