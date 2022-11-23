@@ -146,10 +146,6 @@ class Home : AppCompatActivity() {
             switchActivity("Lunch_Category")
         }
 
-        val dinner = findViewById<ImageView>(R.id.dinnerImg)
-        dinner.setOnClickListener {
-            switchActivity("Dinner_Category")
-        }
         val dessert = findViewById<ImageView>(R.id.dessertImg)
         dessert.setOnClickListener {
             switchActivity("Dessert_Category")
@@ -195,13 +191,7 @@ class Home : AppCompatActivity() {
             }
             "Lunch_Category" ->{
                 val intent = Intent(this, Category::class.java)
-                bundle.putString("category", "Lunch")
-                intent.putExtras(bundle)
-                startActivity(intent)
-            }
-            "Dinner_Category" ->{
-                val intent = Intent(this, Category::class.java)
-                bundle.putString("category", "Dinner")
+                bundle.putString("category", "Lunch/Dinner")
                 intent.putExtras(bundle)
                 startActivity(intent)
             }

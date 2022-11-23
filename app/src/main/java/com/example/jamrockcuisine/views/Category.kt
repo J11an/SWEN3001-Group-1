@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.example.jamrockcuisine.DBHandler
 import com.example.jamrockcuisine.R
+import com.example.jamrockcuisine.models.RecipeModel
 
 class Category : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,6 +28,7 @@ class Category : AppCompatActivity() {
     private fun addRecipes(category: String){
         val dbHandler = DBHandler(this)
         val catRecipeList = findViewById<LinearLayout>(R.id.cat_recipeList)
+
         val recipeList = dbHandler.getRecipes(category)
 
         for (recipe in recipeList){
@@ -158,10 +160,6 @@ class Category : AppCompatActivity() {
             switchActivity("Lunch_Category")
         }
 
-        val dinner = findViewById<ImageView>(R.id.dinnerImg)
-        dinner.setOnClickListener {
-            switchActivity("Dinner_Category")
-        }
         val dessert = findViewById<ImageView>(R.id.dessertImg)
         dessert.setOnClickListener {
             switchActivity("Dessert_Category")
@@ -182,12 +180,7 @@ class Category : AppCompatActivity() {
                 intent.putExtras(bundle)
             }
             "Lunch_Category" -> {
-                bundle.putString("category", "Lunch")
-                intent = Intent(this, Category::class.java)
-                intent.putExtras(bundle)
-            }
-            "Dinner_Category" -> {
-                bundle.putString("category", "Dinner")
+                bundle.putString("category", "Lunch/Dinner")
                 intent = Intent(this, Category::class.java)
                 intent.putExtras(bundle)
             }

@@ -3,6 +3,6 @@ package com.example.jamrockcuisine.models
 data class IngredientsModel(
         val id: Int,
         val name: String,
-        val quantity: Int,
+        val quantity: String,
         val units: String
 )

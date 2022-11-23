@@ -49,6 +49,13 @@ class DBHandler(context: Context) :
         populateTables(db)
     }
 
+    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
+        db!!.execSQL("DROP TABLE IF EXISTS $RECIPES_TABLE")
+        db.execSQL("DROP TABLE IF EXISTS $INGREDIENTS_TABLE")
+        db.execSQL("DROP TABLE IF EXISTS $INSTRUCTIONS_TABLE")
+        onCreate(db)
+    }
+
     //This function creates the tables for the database
     private fun createTables(db: SQLiteDatabase?) {
         //Creating Recipes Table
@@ -63,7 +70,7 @@ class DBHandler(context: Context) :
         //Creating Ingredients Table
         statement = ("CREATE TABLE $INGREDIENTS_TABLE("
                 + "$ID INTEGER PRIMARY KEY,$RECIPE_ID INTEGER,"
-                + "$INGREDIENT_NAME TEXT,$INGREDIENT_QTY INTEGER,"
+                + "$INGREDIENT_NAME TEXT,$INGREDIENT_QTY TEXT,"
                 + "$INGREDIENT_UNITS TEXT)")
         db?.execSQL(statement)
 
@@ -77,42 +84,109 @@ class DBHandler(context: Context) :
 
     // This function populates the database table with all the recipe information
     private fun populateTables(db: SQLiteDatabase?) {
-        // Adding ackee and saltfish recipe to database
+        // Populating Recipe Table with values
         var statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
-                +" VALUES('Ackee and Saltfish','Breakfast',5,75,4,2131165280,0,1)")
+                +" VALUES('Ackee and Saltfish','Breakfast',5,75,4,2131165270,0,1)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
+                +" VALUES('Jerk Chicken','Lunch/Dinner',120,40,8,2131165315,0,0)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
+                +" VALUES('Grater Cake','Dessert',30,45,8,2131165295,0,0)")
         db?.execSQL(statement)
 
+
+        // Populating Ingredients Table with values
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(1,'Saltfish',225,'g')")
+                +" VALUES(1,'Saltfish','225','g')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(1,'Vegetable Oil',2,'tsp')")
+                +" VALUES(1,'Vegetable Oil','2','tsp')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(1,'Diced Onion',2,'tsp')")
+                +" VALUES(1,'Diced Onion','2','tsp')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(1,'Diced Bell Pepper',2,'tsp')")
+                +" VALUES(1,'Diced Bell Pepper','2','tsp')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(1,'Fresh Thyme Leaves',2,'tsp')")
+                +" VALUES(1,'Fresh Thyme Leaves','2','tsp')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(1,'Garlic',2,'cloves')")
+                +" VALUES(1,'Garlic','2','cloves')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(1,'Ackee',20,'oz')")
+                +" VALUES(1,'Ackee','20','oz')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(1,'Scallion',1,'')")
+                +" VALUES(1,'Scallion','1','')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(1,'Small Diced Tomato',1,'')")
+                +" VALUES(1,'Small Diced Tomato','1','')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(1,'Scotch Bonnet Pepper',1,'')")
+                +" VALUES(1,'Scotch Bonnet Pepper','1/2','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'Medium Onion','1','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'Medium Scallion','3','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'Scotch Bonnet Chiles','2','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'Garlic','2','cloves')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'Five-Spice Powder','1','tbsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'AllSpice Berries','1','tbsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'Ground Pepper','1','tbsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'Dried Thyme','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'Grated Nutmeg','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'Salt','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'Soy Sauce','1/2','cup')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'Vegetable Oil','1','tbsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'4-Pound Chickens','4','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(3,'Dried Coconut','3','cups')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(3,'Granulated Sugar','2','cups')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(3,'Water','1/4','cup')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(3,'Almond essence','1/8','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(3,'Salt','1/4','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(3,'Red Food Coloring','1','tsp')")
         db?.execSQL(statement)
 
+
+        // Populate instructions table with values
         statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
                 +" VALUES(1,'Put saltfish to soak in cold water for 1 hour',60,1)")
         db?.execSQL(statement)
@@ -143,69 +217,46 @@ class DBHandler(context: Context) :
         statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
                 +" VALUES(1,'Season with salt and pepper to taste and serve immediately with fried breadfruit or fried dumplings.',0,10)")
         db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(2,'In a food processor, combine the onion, scallions, chiles, garlic, five-spice powder, allspice, pepper, thyme, nutmeg and salt; process to a coarse paste.',0,1)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(2,'With the machine on, add the soy sauce and oil in a steady stream.',0,2)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(2,'Pour the marinade into a large bowl, add the chicken and turn to coat. Cover and refrigerate for 2 hours (better if left overnight)',120,3)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(2,'Bring the chicken to room temperature before proceeding.',0,4)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(2,'Light a grill. Grill the chicken over a medium-hot fire, turning occasionally, until well browned and cooked through, 35 to 40 minutes. (Cover the grill for a smokier flavor.) ',40,5)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(2,'Transfer the chicken to a platter and serve.',0,6)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(3,'Peel off the brown portion of the coconut, wash, grate and set aside.',0,1)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(3,'Combine grated coconut, granulated sugar and water in a pot and put to boil. Reduce to medium flame, mix in the almond essence and the salt. Stir constantly until mixture thickens.',45,2)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(3,'Remove a 1/3 of the mixture and add a small amount of red food colouring to give a delicate pink colour.',0,3)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(3,'Scrape remaining coconut mixture into a greased casserole dish and spread evenly.',0,4)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(3,'Spread the pink coloured coconut evenly over the white mixture.',0,5)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(3,'Set aside for 25-30 minutes or until sufficiently cooled.',30,6)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(3,'Cut into squares and serve.',0,7)")
+        db?.execSQL(statement)
     }
-
-    override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        db!!.execSQL("DROP TABLE IF EXISTS $RECIPES_TABLE")
-        db.execSQL("DROP TABLE IF EXISTS $INGREDIENTS_TABLE")
-        db.execSQL("DROP TABLE IF EXISTS $INSTRUCTIONS_TABLE")
-        onCreate(db)
-    }
-
-    /*
-    @SuppressLint("Range")
-    fun addRecipe(recipe: RecipeModel): Long{
-        val db = this.writableDatabase
-
-        val ingredients = recipe.ingredients
-        val instructions = recipe.instructions
-        val contentValues = ContentValues()
-
-        contentValues.put(REC_NAME, recipe.recipeName)
-        contentValues.put(REC_CATEGORY, recipe.category)
-        contentValues.put(REC_PREP_TIME, recipe.prepTime)
-        contentValues.put(REC_COOK_TIME, recipe.cookTime)
-        contentValues.put(REC_SERVINGS, recipe.servings)
-
-        var success = db.insert(RECIPES_TABLE, null, contentValues)
-
-        val statement = "SELECT * FROM $RECIPES_TABLE WHERE $REC_NAME == ${recipe.recipeName}"
-        val cursor: Cursor?
-
-        try {
-            cursor = db.rawQuery(statement, null)
-        } catch (e: SQLiteException){
-            db.execSQL(statement)
-            return success
-        }
-
-        cursor.moveToFirst()
-        val id = cursor.getInt(cursor.getColumnIndex(ID))
-        cursor.close()
-
-        for (ingredient in ingredients){
-            contentValues.clear()
-            contentValues.put(RECIPE_ID, id)
-            contentValues.put(INGREDIENT_NAME, ingredient.name)
-            contentValues.put(INGREDIENT_QTY, ingredient.quantity)
-            contentValues.put(INGREDIENT_UNITS, ingredient.units)
-            success = db.insert(INGREDIENTS_TABLE, null, contentValues)
-        }
-
-        for (instruction in instructions){
-            contentValues.clear()
-            contentValues.put(RECIPE_ID, id)
-            contentValues.put(STEP_NUMBER, instruction.stepNumber)
-            contentValues.put(INSTRUCTION, instruction.instruction)
-            contentValues.put(INSTRUCTION_TIME, instruction.time)
-            success = db.insert(INSTRUCTIONS_TABLE, null, contentValues)
-        }
-
-        db.close()
-        return  success
-    }
-
-     */
 
     //This function returns an arraylist of RecipeModels containing recipe information depending on the category entered in the parameters
     @SuppressLint("Range")
@@ -270,7 +321,7 @@ class DBHandler(context: Context) :
                             val ingredient = IngredientsModel(
                                     ingredientsCursor.getInt(ingredientsCursor.getColumnIndex(ID)),
                                     ingredientsCursor.getString(ingredientsCursor.getColumnIndex(INGREDIENT_NAME)),
-                                    ingredientsCursor.getInt(ingredientsCursor.getColumnIndex(INGREDIENT_QTY)),
+                                    ingredientsCursor.getString(ingredientsCursor.getColumnIndex(INGREDIENT_QTY)),
                                     ingredientsCursor.getString(ingredientsCursor.getColumnIndex(INGREDIENT_UNITS))
                             )
 
@@ -370,7 +421,7 @@ class DBHandler(context: Context) :
                             val ingredient = IngredientsModel(
                                     ingredientsCursor.getInt(ingredientsCursor.getColumnIndex(ID)),
                                     ingredientsCursor.getString(ingredientsCursor.getColumnIndex(INGREDIENT_NAME)),
-                                    ingredientsCursor.getInt(ingredientsCursor.getColumnIndex(INGREDIENT_QTY)),
+                                    ingredientsCursor.getString(ingredientsCursor.getColumnIndex(INGREDIENT_QTY)),
                                     ingredientsCursor.getString(ingredientsCursor.getColumnIndex(INGREDIENT_UNITS))
                             )
 
