@@ -8,5 +8,8 @@ class SearchResults : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_results)
+        val str1 = "hello"
+        val str2 = "hell"
+        str1.contains(str2)
     }
 }

@@ -1,13 +1,11 @@
 package com.example.jamrockcuisine
 
 import android.annotation.SuppressLint
-import android.content.ContentValues
 import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.jamrockcuisine.models.CredModel
 import com.example.jamrockcuisine.models.IngredientsModel
 import com.example.jamrockcuisine.models.InstructionsModel
 import com.example.jamrockcuisine.models.RecipeModel
@@ -21,10 +19,7 @@ class DBHandler(context: Context) :
         private const val DB_VERSION = 4
         private const val DB_NAME = "AppDB"
 
-        private const val CREDENTIALS_TABLE = "Credentials"
         private const val ID = "_id"
-        private const val CRED_EMAIL = "email"
-        private const val CRED_PASSWORD = "password"
 
         private const val RECIPES_TABLE = "Recipes"
         private const val REC_NAME = "recipeName"
@@ -56,14 +51,8 @@ class DBHandler(context: Context) :
 
     //This function creates the tables for the database
     private fun createTables(db: SQLiteDatabase?) {
-        //Creating Credentials table
-        var statement = ("CREATE TABLE $CREDENTIALS_TABLE("
-                + "$ID INTEGER PRIMARY KEY,$CRED_EMAIL TEXT,"
-                + "$CRED_PASSWORD TEXT)")
-        db?.execSQL(statement)
-
         //Creating Recipes Table
-        statement = ("CREATE TABLE $RECIPES_TABLE("
+        var statement = ("CREATE TABLE $RECIPES_TABLE("
                 + "$ID INTEGER PRIMARY KEY, $REC_IMG_RES_ID INTEGER,$REC_NAME TEXT,"
                 + "$REC_CATEGORY TEXT,$REC_PREP_TIME INTEGER,"
                 + "$REC_COOK_TIME INTEGER,$REC_SERVINGS INTEGER, $REC_FAVORITES INTEGER,"
@@ -157,28 +146,11 @@ class DBHandler(context: Context) :
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        db!!.execSQL("DROP TABLE IF EXISTS $CREDENTIALS_TABLE")
-        db.execSQL("DROP TABLE IF EXISTS $RECIPES_TABLE")
+        db!!.execSQL("DROP TABLE IF EXISTS $RECIPES_TABLE")
         db.execSQL("DROP TABLE IF EXISTS $INGREDIENTS_TABLE")
         db.execSQL("DROP TABLE IF EXISTS $INSTRUCTIONS_TABLE")
         onCreate(db)
     }
-
-    //This function adds a user's information to the Credentials table
-    fun addUser(credential: CredModel): Long{
-        val db = this.writableDatabase
-
-        val contentValues = ContentValues()
-        contentValues.put(CRED_EMAIL, credential.email)
-        contentValues.put(CRED_PASSWORD, credential.password)
-
-        val success = db.insert(CREDENTIALS_TABLE, null, contentValues)
-
-        db.close()
-        return success
-    }
-
-
 
     /*
     @SuppressLint("Range")
@@ -235,57 +207,21 @@ class DBHandler(context: Context) :
 
      */
 
-    //This function returns an arraylist of CredModels containing user's credential information
-    @SuppressLint("Range")
-     fun getUsers(): ArrayList<CredModel>{
-        //onUpgrade(this.writableDatabase,this.writableDatabase.version,this.writableDatabase.version+1)
-        val credList = ArrayList<CredModel>()
-
-        val statement = "SELECT * FROM $CREDENTIALS_TABLE"
-        val db = this.readableDatabase
-        val cursor: Cursor?
-
-        try {
-            cursor = db.rawQuery(statement, null)
-        } catch (e: SQLiteException){
-            db.execSQL(statement)
-            return ArrayList()
-        }
-
-        var id: Int
-        var email: String
-        var password: String
-
-        if (cursor.moveToFirst()){
-            do{
-                id = cursor.getInt(cursor.getColumnIndex(ID))
-                email = cursor.getString(cursor.getColumnIndex(CRED_EMAIL))
-                password = cursor.getString(cursor.getColumnIndex(CRED_PASSWORD))
-
-                val cred = CredModel(id, email, password)
-                credList.add(cred)
-
-            } while (cursor.moveToNext())
-        }
-        cursor.close()
-        db.close()
-        getRecipes("All")
-        return credList
-    }
-
     //This function returns an arraylist of RecipeModels containing recipe information depending on the category entered in the parameters
     @SuppressLint("Range")
      fun getRecipes(category: String): ArrayList<RecipeModel>{
         val recipeList = ArrayList<RecipeModel>()
 
-        val statement = if (category == "Favorites") {
-            "SELECT * FROM $RECIPES_TABLE WHERE $REC_FAVORITES = 1"
-        }
-        else if (category == "Trending"){
-            "SELECT * FROM $RECIPES_TABLE WHERE $REC_TRENDY = 1"
-        }
-        else{
-            "SELECT * FROM $RECIPES_TABLE WHERE $REC_CATEGORY = '$category'"
+        val statement = when (category) {
+            "Favorites" -> {
+                "SELECT * FROM $RECIPES_TABLE WHERE $REC_FAVORITES = 1"
+            }
+            "Trending" -> {
+                "SELECT * FROM $RECIPES_TABLE WHERE $REC_TRENDY = 1"
+            }
+            else -> {
+                "SELECT * FROM $RECIPES_TABLE WHERE $REC_CATEGORY = '$category'"
+            }
         }
 
         val statement2 = "SELECT * FROM $INGREDIENTS_TABLE"
@@ -378,7 +314,7 @@ class DBHandler(context: Context) :
         recipeCursor.close()
         ingredientsCursor.close()
         instructionsCursor.close()
-        //db.close()
+        db.close()
         return recipeList
     }
 
@@ -490,5 +426,6 @@ class DBHandler(context: Context) :
         }
 
         db.execSQL(statement)
+        db.close()
     }
 }

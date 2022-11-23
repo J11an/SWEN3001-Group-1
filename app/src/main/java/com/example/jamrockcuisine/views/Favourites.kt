@@ -51,7 +51,6 @@ class Favourites : AppCompatActivity() {
             }
             favoritesList.addView(recipeCard)
 
-            //TODO Access ImageView and set the image resource based on resource id in RecipeModel
 
             //Creating and configuring horizontal linear layout
             linearParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT)
