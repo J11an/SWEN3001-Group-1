@@ -86,13 +86,13 @@ class DBHandler(context: Context) :
     private fun populateTables(db: SQLiteDatabase?) {
         // Populating Recipe Table with values
         var statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
-                +" VALUES('Ackee and Saltfish','Breakfast',5,75,4,2131165270,0,1)")
+                +" VALUES('Ackee and Saltfish','Breakfast',5,75,4,${R.drawable.ackee_and_saltfish},0,1)")
         db?.execSQL(statement)
         statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
-                +" VALUES('Jerk Chicken','Lunch/Dinner',120,40,8,2131165315,0,0)")
+                +" VALUES('Jerk Chicken','Lunch/Dinner',120,40,8,${R.drawable.jerk_chicken},0,0)")
         db?.execSQL(statement)
         statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
-                +" VALUES('Grater Cake','Dessert',30,45,8,2131165295,0,0)")
+                +" VALUES('Grater Cake','Dessert',30,45,8,${R.drawable.gratercake},0,0)")
         db?.execSQL(statement)
         statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
                 +" VALUES('Sweet Potato Pudding ','Dessert',30,50,10,2131165295,0,1)")
@@ -207,13 +207,10 @@ class DBHandler(context: Context) :
                 +" VALUES(4,'Sweet Potato','2','lbs')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(4,'Sweet Potato','2','lbs')")
-        db?.execSQL(statement)
-        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
                 +" VALUES(4,'Flour','1','cup')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(2,'Coconut Milk','2','cups')")
+                +" VALUES(4,'Coconut Milk','2','cups')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
                 +" VALUES(4,'Dried Fruits','1 1/2','cups')")
