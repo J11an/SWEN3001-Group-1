@@ -95,22 +95,22 @@ class DBHandler(context: Context) :
                 +" VALUES('Grater Cake','Dessert',30,45,8,${R.drawable.gratercake},0,0)")
         db?.execSQL(statement)
         statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
-                +" VALUES('Sweet Potato Pudding ','Dessert',30,50,10,2131165295,0,1)")
+                +" VALUES('Sweet Potato Pudding ','Dessert',30,50,10,${R.drawable.sweet_potato_pudding},0,1)")
         db?.execSQL(statement)
         statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
-                +" VALUES('Coconut Drops ','Dessert',15,30,12,2131165295,0,0)")
+                +" VALUES('Coconut Drops ','Dessert',15,30,12,${R.drawable.coconut_drops},0,0)")
         db?.execSQL(statement)
         statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
-                +" VALUES('Gizzada ','Dessert',45,15,1,2131165295,0,0)")
+                +" VALUES('Gizzada ','Dessert',45,15,1,${R.drawable.gizzada},0,0)")
         db?.execSQL(statement)
         statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
-                +" VALUES('Fried Dumpling','Breakfast',10,15,6,2131165270,0,1)")
+                +" VALUES('Fried Dumpling','Breakfast',10,15,6,${R.drawable.fried_dumplings},0,1)")
         db?.execSQL(statement)
         statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
-                +" VALUES('Saltfish Fritters','Breakfast',15,30,8,2131165270,0,0)")
+                +" VALUES('Saltfish Fritters','Breakfast',15,30,8,${R.drawable.saltfish_fritters},0,0)")
         db?.execSQL(statement)
         statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
-                +" VALUES('Boiled Dumplings','Breakfast',10,20,15,2131165270,0,0)")
+                +" VALUES('Boiled Dumplings','Breakfast',10,20,15,${R.drawable.jamaican_boiled_dumplings},0,0)")
         db?.execSQL(statement)
 
 
