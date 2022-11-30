@@ -112,6 +112,15 @@ class DBHandler(context: Context) :
         statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
                 +" VALUES('Boiled Dumplings','Breakfast',10,20,15,${R.drawable.jamaican_boiled_dumplings},0,0)")
         db?.execSQL(statement)
+        statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
+                +" VALUES('Brown Stew Chicken','Lunch/Dinner',10,45,6,${R.drawable.brown_stew_chicken},0,0)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
+                +" VALUES('Oxtail','Lunch/Dinner',20,60,2,${R.drawable.oxtail_stew},0,0)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
+                +" VALUES('Curry Goat','Lunch/Dinner',20,90,8,${R.drawable.curry_goat},0,0)")
+        db?.execSQL(statement)
 
 
 
@@ -320,15 +329,141 @@ class DBHandler(context: Context) :
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
                 +" VALUES(9,'Salt','1','tsp')")
         db?.execSQL(statement)
-
-
-
-
-
-
-
-
-
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(10,'Chicken','2','lbs')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(10,'Medium Bell Pepper','1','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(10,'Large Onion','1','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(10,'Medium Tomato','1','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(10,'Garlic','2','cloves')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(10,'Scallion','1','stalk')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(10,'Thyme','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(10,'Scotch Bonnet Pepper','1','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(10,'Browning Sauce','1 & 1/2','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(10,'Ketchup','1/4','cup')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(10,'Chicken Seasoning','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(10,'Salt','1/2','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Beef Oxtail','1','lb')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Large Onion','1','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Green Onion','1','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Garlic','2','cloves')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Ginger Root','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Scotch Bonnet Pepper','1','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Chile Pepper','1','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Soy Sauce','2','tbsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Thyme','1','sprig')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Salt','1/2','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Black Pepper','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Vegetable Oil','2','tbsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Water','1 & 1/2','cups')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Canned Fava Beans','1','cup')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Allspice Berries','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Cornstarch','1','tbsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(11,'Water','2','tbsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Goat Meat','3','lbs')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'White Vinegar','2','tbsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Curry Powder','2','tbsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Medium Onion','1','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Scallion','2','stalks')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Garlic','4','cloves')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Ginger','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Thyme','2','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Scotch Bonnet Pepper','1/2','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Black Pepper','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Salt','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Vegetable Oil','1/4','cup')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Boiling Water','4','cups')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Large Irish Potato','1','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Medium Carrot','1','')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(12,'Whole Pimento Berries','4','')")
+        db?.execSQL(statement)
 
 
 
@@ -527,6 +662,66 @@ class DBHandler(context: Context) :
         db?.execSQL(statement)
         statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
                 +" VALUES(9,'Carefully remove the boiled dumplings when cooked.',0,5)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(10,' After washing the chicken with lime and vinegar, remove the skin. This dish is best with skin-less chicken. ',0,1)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(10,'Season with salt, chicken seasoning, scotch bonnet pepper, ginger, garlic, onion, scallion, thyme, pimento, and browning sauce.',0,2)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(10,'For maximum flavor, leave to marinate for at least an hour.',60,3)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(10,'Once you are ready to cook, separate the marinade from the chicken. Just separate the bigger pieces of onion, scallion, thyme etc.',0,4)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(10,'In a large pot that has a lid, heat enough oil over      medium-high heat. In batches, cook the chicken for about 3 minutes on each side, until nice and golden.',6,5)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(10,'Add water, bell pepper, tomato, chicken stock, salt, ketchup and the marinade you separated earlier. Once the liquid is hot and starts boiling, add the chicken.',0,6)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(10,'Cover the pot and let it simmer for 30 minutes.',30,7)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(11,'Toss the oxtail with the onion, green onion, garlic, ginger, chile pepper, soy sauce, thyme, salt, and pepper. ',0,1)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(11,'Heat the vegetable oil in a large skillet over medium-high heat',0,2)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(11,'Brown the oxtail in the skillet until browned all over, about 10 minutes.',10,3)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(11,'Place into a pressure cooker, and pour in 1 1/2 cup water. Cook at pressure for 25 minutes, then remove from heat.',25,4)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(11,'Add the fava beans and allspice berries, and bring to a simmer over medium-high heat.',0,5)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(11,'Dissolve the cornstarch in 2 tablespoons of water, and stir into the simmering oxtail. ',0,6)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(11,'Cook and stir for a few minutes until the sauce has thickened, and the beans are tender.',0,7)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(12,'Trim meat, cut into bite-size pieces and wash in a mixture of water and vinegar.',0,1)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(12,'Add 1 tablespoon curry powder, chopped onion, escallion, garlic, ginger, thyme, scotch bonnet pepper, black pepper and salt.',0,2)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(12,'Rub the seasonings into the meat, cover and put to marinate for two hours.',120,3)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(12,'Heat vegetable oil in a heavy bottom skillet over medium heat and add the remaining one tablespoon curry powder.  Add the marinated meat and allow to sear.',0,4)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(12,'Turn the meat and add 4 cups of boiling water.  Cover and simmer for about 1 hour 20 minutes or until the meat is tender.',80,5)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(12,'Add the diced potato and cook for 5 minutes.  Fold in the sliced carrot and pimento berries and cook for five minutes.',5,6)")
         db?.execSQL(statement)
 
     }
