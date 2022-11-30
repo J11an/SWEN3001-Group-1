@@ -94,6 +94,15 @@ class DBHandler(context: Context) :
         statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
                 +" VALUES('Grater Cake','Dessert',30,45,8,2131165295,0,0)")
         db?.execSQL(statement)
+        statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
+                +" VALUES('Sweet Potato Pudding ','Dessert',30,50,10,2131165295,0,1)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
+                +" VALUES('Coconut Drops ','Dessert',15,30,12,2131165295,0,0)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $RECIPES_TABLE ($REC_NAME,$REC_CATEGORY,$REC_PREP_TIME,$REC_COOK_TIME,$REC_SERVINGS,$REC_IMG_RES_ID,$REC_FAVORITES,$REC_TRENDY)"
+                +" VALUES('Gizzada ','Dessert',45,15,1,2131165295,0,0)")
+        db?.execSQL(statement)
 
 
         // Populating Ingredients Table with values
@@ -184,6 +193,85 @@ class DBHandler(context: Context) :
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
                 +" VALUES(3,'Red Food Coloring','1','tsp')")
         db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(4,'Sweet Potato','2','lbs')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(4,'Sweet Potato','2','lbs')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(4,'Flour','1','cup')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(2,'Coconut Milk','2','cups')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(4,'Dried Fruits','1 1/2','cups')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(4,'Vanilla','2','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(4,'Grated Nutmeg','1 1/2','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(4,'Mixed Spice','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(4,'Mixed Spice','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(4,'Brown Sugar','1','cup')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(4,'Salt','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(4,'Margarine','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(5,'Diced Coconut','2','cups')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(5,'Vanilla','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(5,'Brown Sugar','1','lb')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(5,'Salt','1','pinch')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(5,'Powdered Ginger','1','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(5,'Water','1/2','cup')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(6,'Pastry Flower','1','lb')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(6,'Sugar','1/2','tbsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(6,'Salt','1/8','tsp')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(6,'Margarine (Cold)','1/4','lb')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(6,'Shortening (Cold)','1/4','lb')")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
+                +" VALUES(6,'Cold Water','3/4','cup')")
+        db?.execSQL(statement)
+
+
+
+
+
+
+
 
 
         // Populate instructions table with values
@@ -256,7 +344,74 @@ class DBHandler(context: Context) :
         statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
                 +" VALUES(3,'Cut into squares and serve.',0,7)")
         db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(4,'Wash and pare off the skin of the potatoes.',0,1)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(4,'Wash again then grate.',0,2)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(4,'Grate coconut, add water and squeeze juice through a strainer.',0,3)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(4,'Blend flour, mixed spice (raisins etc) ,salt, and nutmeg.',0,4)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(4,'Combine this mixture with the grated potatoes and mix well',0,5)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(4,'Add sugar, fruits and coconut milk. Mix well.',0,6)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(4,'Grease pan, pour in batter, bake at 350 degrees F for 50 minutes or until done.',50,7)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(5,'Place 1/2 cup of water into pot and bring to a boil.',0,1)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(5,'Combine all ingredients and add to boiling water.',0,2)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(5,'Boil for approximately 25 to 30 minutes or until very sticky.',30,3)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(5,'Line your cookie sheet with parchment paper or just use cooking spray.',0,4)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(5,'Take a serving spoon or ice cream scooper to yield one drop on a baking cookie sheet placing 1 inch apart.',0,5)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(5,' Wait until it is cool and hard to eat.',0,6)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(6,'Place flour in a large bowl, add sugar and salt and mix well.',0,1)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(6,'Shred the cold margarine and shortening, add to the flour and rub in until the mixture looks like fine breadcrumbs.',0,2)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(6,'Add cold water to the flour mixture and gently mix to form a pastry dough. Do not knead.',0,3)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(6,'Cover the pastry and place in the refrigerator to relax for about 15-18 minutes.',18,4)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(6,'Lightly dust the work surface with flour.',0,5)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(6,'Remove pastry from the refrigerator and place on the floured work surface.Use a lightly floured rolling pin to roll out the pastry.',0,6)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(6,'Use a 3 1/2 - 4 inch cutter to cut rolled pastry into circles.',0,7)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(6,'Crimp the edge using the thumb of one hand and the thumb and fore finger of the other hand.',0,8)")
+        db?.execSQL(statement)
+        statement = ("INSERT INTO $INSTRUCTIONS_TABLE ($RECIPE_ID,$INSTRUCTION,$INSTRUCTION_TIME,$STEP_NUMBER)"
+                +" VALUES(6,'Place on a cookie sheet, fill each with about three tablespoons coconut mixture and bake in a pre-heated oven at 205 degrees C or 400 degrees F for 15-20 minutes.',15,9)")
+        db?.execSQL(statement)
     }
+
 
     //This function returns an arraylist of RecipeModels containing recipe information depending on the category entered in the parameters
     @SuppressLint("Range")
