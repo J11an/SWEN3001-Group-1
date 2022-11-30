@@ -13,8 +13,8 @@ class Splash : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         //println(R.drawable.ackee_and_saltfish)
-        //val dbHandler = DBHandler(this)
-        //dbHandler.onUpgrade(dbHandler.writableDatabase,dbHandler.readableDatabase.version,dbHandler.writableDatabase.version)
+        val dbHandler = DBHandler(this)
+        dbHandler.onUpgrade(dbHandler.writableDatabase,dbHandler.readableDatabase.version,dbHandler.writableDatabase.version)
         val registerButton = findViewById<Button>(R.id.splash_homeButton);
         registerButton.setOnClickListener {
             val intent = Intent(this, Home::class.java)
