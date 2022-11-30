@@ -207,13 +207,10 @@ class DBHandler(context: Context) :
                 +" VALUES(4,'Sweet Potato','2','lbs')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(4,'Sweet Potato','2','lbs')")
-        db?.execSQL(statement)
-        statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
                 +" VALUES(4,'Flour','1','cup')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
-                +" VALUES(2,'Coconut Milk','2','cups')")
+                +" VALUES(4,'Coconut Milk','2','cups')")
         db?.execSQL(statement)
         statement = ("INSERT INTO $INGREDIENTS_TABLE ($RECIPE_ID,$INGREDIENT_NAME,$INGREDIENT_QTY,$INGREDIENT_UNITS)"
                 +" VALUES(4,'Dried Fruits','1 1/2','cups')")
